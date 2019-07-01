@@ -1,7 +1,11 @@
 <?php
 
+// obligatory define YII_DEBUG to true
+define('YII_DEBUG', true);
+
 // require bootstrap application
 require  __DIR__.'/../vendor/yiisoft/yii2/Yii.php';
+
 // load configuration
 $config = require __DIR__.'/../config/web.php';
 

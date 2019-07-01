@@ -14,6 +14,6 @@ class SiteController  extends Controller
       */
       public function actionIndex()
       {
-      	   return 'Жан-Клод';
+      	   return $this->render('index');
       }
 }
