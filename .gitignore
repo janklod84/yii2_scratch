@@ -1,3 +1,4 @@
 .idea
-vendor
+/vendor
+/_schema
 README.txt
