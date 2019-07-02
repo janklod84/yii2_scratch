@@ -9,7 +9,7 @@ class UserController  extends Controller
 {
       
 
-      /**
+      /** 
        * Action join
        * 
        * @return string
