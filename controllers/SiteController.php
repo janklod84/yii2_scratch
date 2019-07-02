@@ -15,29 +15,7 @@ class SiteController  extends Controller
       */
       public function actionIndex()
       {
-      	   Yii::trace("Жан-Клод", "My Blog");
       	   return $this->render('index');
       }
 
-
-      /**
-       * Action join
-       * 
-       * @return string
-      */
-      public function actionJoin()
-      {
-      	   return $this->render('join');
-      }
-
-
-      /**
-       * Action login
-       * 
-       * @return string
-      */
-      public function actionLogin()
-      {
-      	   return $this->render('login');
-      }
 }
