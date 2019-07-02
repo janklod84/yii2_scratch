@@ -1,12 +1,13 @@
 <?php 
 use yii\bootstrap\NavBar;
+use yii\bootstrap\Nav;
 
 ?>
 <!DOCTYPE html>
 <?php $this->beginPage(); ?>
 <html>
 <head>
-	<title>Learn Yii</title>
+	<title>MySite</title>
 	<?php $this->head(); ?>
 </head>
 <body>
@@ -19,8 +20,16 @@ use yii\bootstrap\NavBar;
        'class' => 'navbar-default navbar-fixed-top'
     ]
  ]);
-
-  NavBar::end();
+ 
+ $menu = [
+   ['label' => 'Join', 'url' => ['/site/join']],
+   ['label' => 'Login', 'url' => ['/site/login']]
+ ];
+ echo Nav::widget([
+    'options' => ['class'=> 'navbar-nav navbar-right'],
+    'items'   => $menu 
+ ]);
+ NavBar::end();
 ?>
  
   <div class="container" style="margin-top: 70px;">

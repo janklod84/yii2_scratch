@@ -16,4 +16,26 @@ class SiteController  extends Controller
       {
       	   return $this->render('index');
       }
+
+
+      /**
+       * Action join
+       * 
+       * @return string
+      */
+      public function actionJoin()
+      {
+      	   return $this->render('index');
+      }
+
+
+      /**
+       * Action login
+       * 
+       * @return string
+      */
+      public function actionLogin()
+      {
+      	   return $this->render('index');
+      }
 }
