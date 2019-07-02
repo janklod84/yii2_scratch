@@ -4,6 +4,8 @@ use Step\Acceptance\TestUserJoin;
 $I = new TestUserJoin($scenario);
 $I->wantTo('New users join and login');
 
+echo "\n";
+
 // create users
 $user1 = $I->imagineUser();
 $user2 = $I->imagineUser();
