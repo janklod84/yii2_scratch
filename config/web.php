@@ -19,7 +19,7 @@
  * 
 */
 return [
-  'id' => 'scratch', 
+  'id' => 'school-web', 
   'basePath' => realpath(__DIR__.'/../'),
   'bootstrap' => [
      'debug' 

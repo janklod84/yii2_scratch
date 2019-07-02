@@ -1,6 +1,7 @@
 <?php
+# WEB APPLICATION
 
-// obligatory define YII_DEBUG to true
+// define YII_DEBUG to true
 define('YII_DEBUG', true);
 
 // require bootstrap application
