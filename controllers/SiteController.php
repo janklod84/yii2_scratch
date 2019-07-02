@@ -25,7 +25,7 @@ class SiteController  extends Controller
       */
       public function actionJoin()
       {
-      	   return $this->render('index');
+      	   return $this->render('join');
       }
 
 
@@ -36,6 +36,6 @@ class SiteController  extends Controller
       */
       public function actionLogin()
       {
-      	   return $this->render('index');
+      	   return $this->render('login');
       }
 }
