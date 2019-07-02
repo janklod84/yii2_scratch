@@ -1,6 +1,7 @@
 <?php 
 namespace app\controllers;
 
+use yii;
 use yii\web\Controller;
 
 
@@ -14,6 +15,7 @@ class SiteController  extends Controller
       */
       public function actionIndex()
       {
+      	   Yii::trace("Жан-Клод", "My Blog");
       	   return $this->render('index');
       }
 
