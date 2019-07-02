@@ -1,5 +1,6 @@
 .idea
 /vendor
 /_schema
-/runtime
+runtime
+runtime/debug
 README.txt
