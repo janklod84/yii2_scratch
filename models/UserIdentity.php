@@ -66,7 +66,8 @@ class UserIdentity extends UserRecord implements IdentityInterface
      */
     public function getAuthKey()
     {
-        // TODO: Implement getAuthKey() method.
+        // here must to generate secret code
+        return $this->email;
     }
 
     /**
@@ -79,6 +80,7 @@ class UserIdentity extends UserRecord implements IdentityInterface
      */
     public function validateAuthKey($authKey)
     {
-        // TODO: Implement validateAuthKey() method.
+        // verify auth key
+        return $this->getAuthKey() === $authKey;
     }
 }

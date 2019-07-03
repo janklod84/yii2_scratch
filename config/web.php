@@ -36,7 +36,8 @@ return [
      ],
      'db' => require(__DIR__.'/db.php'),
       'user' => [
-          'identityClass' => 'app\models\UserIdentity' // Add authentification class
+          'identityClass' => 'app\models\UserIdentity', // Add authentification class
+          'enableAutoLogin' => true // permet l'authentification automatic par cookie [cas remember me]
       ]
   ],
   'modules' => [
