@@ -10,6 +10,7 @@ echo "\n";
 $user1 = $I->imagineUser();
 $user2 = $I->imagineUser();
 
+
 $I->loginUser($user1);
 $I->see("This e-mail does not registred");
 

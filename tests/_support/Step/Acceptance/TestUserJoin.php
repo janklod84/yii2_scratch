@@ -1,17 +1,21 @@
 <?php
 namespace Step\Acceptance;
 
+use Faker\Factory;
+
+
 class TestUserJoin extends \AcceptanceTester
 {
 
     public function imagineUser()
     {
+        $faker = Factory::create();
         $user = [
-           'name' => 'Jean',
-           'email' => 'jeanyao@ymail.com',
-           'password' => 'qwerty'
+           'name' => $faker->name,
+           'email' => $faker->email,
+           'password' => $faker->city
         ];
-        print_r($user);
+        // print_r($user);
         return $user;
     }
 
