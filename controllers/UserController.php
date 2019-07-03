@@ -47,7 +47,10 @@ class UserController  extends Controller
           {
               if($userJoinForm->validate())
               {
-                  $userJoinForm->name .= " OK";
+                  $userRecord = new UserRecord();
+                  $userRecord->setUserJoinForm($userJoinForm);
+                  $userRecord->save();
+                  return $this->redirect('/user/login');
               }
           }
           return $this->render('join', compact('userJoinForm'));

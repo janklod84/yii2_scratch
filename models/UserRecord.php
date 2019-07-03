@@ -43,4 +43,16 @@ class UserRecord extends ActiveRecord  // implements yii\web\IdentityInterface
          $count = self::find()->where(['email' => $email])->count();
          return $count > 0;
      }
+
+
+    /**
+     * @param $userJoinForm
+     */
+     public function setUserJoinForm($userJoinForm)
+     {
+         $this->name = $userJoinForm->name;
+         $this->email = $userJoinForm->email;
+         $this->passhash = $userJoinForm->password;
+         $this->status = 1;
+     }
 }
