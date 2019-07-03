@@ -1,6 +1,7 @@
 <?php 
 namespace app\controllers;
 
+use app\models\UserJoinForm;
 use yii;
 use yii\web\Controller;
 use app\models\UserRecord;
@@ -22,8 +23,9 @@ class UserController  extends Controller
           // $userRecord = new UserRecord();
           // $userRecord->setTestUser();
           // $userRecord->save();
-
-	    return $this->render('join');
+        $userJoinForm = new UserJoinForm();
+        $userJoinForm->name = "John";
+	    return $this->render('join', compact('userJoinForm'));
       }
 
 
@@ -34,10 +36,9 @@ class UserController  extends Controller
       */
       public function actionLogin()
       {
-          // id concret user we want to login ($uid)
-          $uid = UserIdentity::findIdentity(1);
-          Yii::$app->user->login($uid);
-
+          //  id concret user we want to login ($uid)
+          //  $uid = UserIdentity::findIdentity(1);
+          //  Yii::$app->user->login($uid);
 	      return $this->render('login');
       }
 }
