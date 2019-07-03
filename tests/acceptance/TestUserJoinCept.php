@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 use Step\Acceptance\TestUserJoin;
 
 $I = new TestUserJoin($scenario);
