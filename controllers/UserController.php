@@ -37,6 +37,7 @@ class UserController  extends Controller
           // id concret user we want to login ($uid)
           $uid = UserIdentity::findIdentity(1);
           Yii::$app->user->login($uid);
+
 	      return $this->render('login');
       }
 }
