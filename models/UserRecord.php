@@ -9,7 +9,7 @@ use Faker\Factory;
 /**
  * class UserRecord
 */
-class UserRecord extends ActiveRecord 
+class UserRecord extends ActiveRecord  // implements yii\web\IdentityInterface
 {
      
      /**

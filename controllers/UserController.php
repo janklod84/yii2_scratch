@@ -4,6 +4,8 @@ namespace app\controllers;
 use yii;
 use yii\web\Controller;
 use app\models\UserRecord;
+use app\models\UserIdentity;
+
 
 
 class UserController  extends Controller
@@ -32,6 +34,9 @@ class UserController  extends Controller
       */
       public function actionLogin()
       {
-	   return $this->render('login');
+          // id concret user we want to login ($uid)
+          $uid = UserIdentity::findIdentity(1);
+          Yii::$app->user->login($uid);
+	      return $this->render('login');
       }
 }

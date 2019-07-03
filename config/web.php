@@ -35,6 +35,9 @@ return [
         'cookieValidationKey' => 'my-secret-code'
      ],
      'db' => require(__DIR__.'/db.php'),
+      'user' => [
+          'identityClass' => 'app\models\UserIdentity' // Add authentification class
+      ]
   ],
   'modules' => [
       'debug' => 'yii\debug\Module'
