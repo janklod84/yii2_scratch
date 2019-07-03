@@ -20,7 +20,12 @@ class UserRecord extends ActiveRecord
      	 return "user";
      }
 
-
+     
+     /**
+      * Set user data
+      * 
+      * @return void
+     */
      public function setTestUser()
      {
      	  $this->name   =  "Jean";
