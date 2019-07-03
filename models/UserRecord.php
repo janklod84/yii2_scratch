@@ -3,6 +3,7 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 use Faker\Factory;
+use yii;
 
 
 
@@ -69,6 +70,12 @@ class UserRecord extends ActiveRecord  // implements yii\web\IdentityInterface
 
      public function  setPassword($password)
      {
-          $this->passhash = $password;
+          $this->passhash = Yii::$app->security->generatePasswordHash($password);
+     }
+
+
+     public function validatePassword($password)
+     {
+         return Yii::$app->security->validatePassword($password, $this->passhash);
      }
 }
