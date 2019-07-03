@@ -13,6 +13,11 @@ class UserJoinForm extends Model
      public $password2;
 
 
+    /**
+     * L'ordre de verification est important
+     *
+     * @return array
+     */
      public function rules()
      {
          return [
@@ -24,7 +29,8 @@ class UserJoinForm extends Model
              ['email', 'email'], // or write like ['email', 'email', 'message' => 'Адрес эл. почта указан неверно']
              ['password', 'string', 'min' => 4],
              ['password2', 'compare', 'compareAttribute' => 'password'], // (matches)
-             ['email', 'errorIfEmailUsed']
+             ['name', 'errorIfMagic'], // add our function
+             ['email', 'errorIfEmailUsed'] // add our function
 
          ];
      }
@@ -37,13 +43,27 @@ class UserJoinForm extends Model
          $this->password = $this->password2 = "qwerty";
      }
 
+
+     public function errorIfMagic()
+     {
+         if($this->name == "Magic")
+         {
+             $this->addError("name", 'No magic please');
+         }
+     }
+
      public function errorIfEmailUsed()
      {
+         // если есть ошибки то выходим из программу
+         if($this->hasErrors())
+         {
+             return;
+         }
+
          // если не найдено такой е-майл то все хорошо
          if(UserRecord::existsEmail($this->email))
          {
-              return;
+             $this->addError('email', 'This e-mail already exists');
          }
-         $this->addError('email', 'This e-mail already exists');
      }
 }
