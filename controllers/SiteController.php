@@ -11,7 +11,7 @@ class SiteController  extends Controller
       /**
        * Action index
        * 
-       * @return string
+       * @return mixed
       */
       public function actionIndex()
       {

@@ -16,7 +16,7 @@ class UserController  extends Controller
       /** 
        * Action join
        * 
-       * @return string
+       * @return mixed
       */
       public function actionJoin()
       {
@@ -33,13 +33,25 @@ class UserController  extends Controller
       /**
        * Action login
        * 
-       * @return string
+       * @return mixed
       */
       public function actionLogin()
       {
           //  id concret user we want to login ($uid)
-          //  $uid = UserIdentity::findIdentity(1);
-          //  Yii::$app->user->login($uid);
+          // $uid = UserIdentity::findIdentity(mt_rand(1,2));
+          // Yii::$app->user->login($uid);
 	      return $this->render('login');
+      }
+
+
+     /**
+     * Action logout
+      *
+      * @return mixed
+     */
+      public function actionLogout()
+      {
+           Yii::$app->user->logout();
+           return $this->redirect("/");
       }
 }
