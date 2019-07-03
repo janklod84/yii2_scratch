@@ -66,8 +66,8 @@ class UserIdentity extends UserRecord implements IdentityInterface
      */
     public function getAuthKey()
     {
-        // here must to generate secret code
-        return $this->email;
+        // generate secret code
+        return $this->authokey;
     }
 
     /**

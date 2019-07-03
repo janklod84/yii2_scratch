@@ -70,17 +70,23 @@ class UserRecord extends ActiveRecord  // implements yii\web\IdentityInterface
 
      public function  setPassword($password)
      {
-          Yii::beginProfile("hash", __METHOD__);
-          $this->passhash = Yii::$app->security->generatePasswordHash($password, 16);
-          Yii::endProfile("hash", __METHOD__);
+          $this->passhash = Yii::$app->security->generatePasswordHash($password);
+          $this->authokey = Yii::$app->security->generateRandomString(100); // genere une cle unique for auth
      }
 
 
      public function validatePassword($password)
      {
-         Yii::beginProfile("hash", __METHOD__);
-         $return = Yii::$app->security->validatePassword($password, $this->passhash);
-         Yii::endProfile("hash", __METHOD__);
-         return $return;
+         return Yii::$app->security->validatePassword($password, $this->passhash);
      }
+
+     /*
+    public function  profilingTest($password)
+    {
+        Yii::beginProfile("hash", __METHOD__);
+        $this->passhash = Yii::$app->security->generatePasswordHash($password, 16);
+        Yii::endProfile("hash", __METHOD__);
+    }
+     */
+
 }
