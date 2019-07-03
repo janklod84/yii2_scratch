@@ -20,13 +20,28 @@ class UserController  extends Controller
       */
       public function actionJoin()
       {
-          // $userRecord = new UserRecord();
-          // $userRecord->setTestUser();
-          // $userRecord->save();
+          if(Yii::$app->request->isPost)
+          {
+              return $this->actionJoinPost();
+          }
+          $userJoinForm = new UserJoinForm();
+          $userRecord = new UserRecord();
+          $userRecord->setTestUser();
+          $userJoinForm->setUserRecord($userRecord);
+//          $userJoinForm->name = "Magic";
+	      return $this->render('join', compact('userJoinForm'));
+      }
 
-        $userJoinForm = new UserJoinForm();
-//        $userJoinForm->name = "John";
-	    return $this->render('join', compact('userJoinForm'));
+      public function actionJoinPost()
+      {
+          $userJoinForm = new UserJoinForm();
+          $userJoinForm->load(Yii::$app->request->post()); // assign field to value from $_POST
+          /*
+           * $userJoinForm->name  = $_POST['name'];
+           * $userJoinForm->email = $_POST['email']
+           */
+          // $userJoinForm->name .= ".";
+          return $this->render('join', compact('userJoinForm'));
       }
 
 
@@ -54,4 +69,6 @@ class UserController  extends Controller
            Yii::$app->user->logout();
            return $this->redirect("/");
       }
+
+
 }
