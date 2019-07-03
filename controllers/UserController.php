@@ -3,6 +3,7 @@ namespace app\controllers;
 
 use yii;
 use yii\web\Controller;
+use app\models\UserRecord;
 
 
 class UserController  extends Controller
@@ -16,7 +17,11 @@ class UserController  extends Controller
       */
       public function actionJoin()
       {
-	   return $this->render('join');
+          $userRecord = new UserRecord();
+          $userRecord->setTestUser();
+          $userRecord->save();
+          
+	    return $this->render('join');
       }
 
 

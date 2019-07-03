@@ -14,6 +14,8 @@
  *   -- request (Request)
  *      'cookieValidationKey' : (insere ce qu'on veut ) comme cle cookie
  * 
+ *   -- db (Include Database components)
+ * 
  * modules : permet d'ajouter des modules a charger
  *   'debug' => yii\debug\Module (La cle 'debug' return le module yii\debug\Module)
  * 
@@ -31,7 +33,8 @@ return [
      ],  
      'request' => [
         'cookieValidationKey' => 'my-secret-code'
-     ]
+     ],
+     'db' => require(__DIR__.'/db.php'),
   ],
   'modules' => [
       'debug' => 'yii\debug\Module'
