@@ -38,11 +38,21 @@ class UserRecord extends ActiveRecord  // implements yii\web\IdentityInterface
      }
 
 
-     public static function existsEmail ($email) // findUserByEmail
+     public static function existsEmail ($email)
      {
-         $count = self::find()->where(['email' => $email])->count();
+         $count = static::find()->where(['email' => $email])->count();
          return $count > 0;
      }
+
+
+     /**
+     * @param $email
+     * @return UserRecord|null
+     */
+      public static function findUserByEmail ($email)
+      {
+         return static::findOne(['email' => $email]);
+      }
 
 
     /**
