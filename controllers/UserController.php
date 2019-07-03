@@ -23,6 +23,7 @@ class UserController  extends Controller
           // $userRecord = new UserRecord();
           // $userRecord->setTestUser();
           // $userRecord->save();
+
         $userJoinForm = new UserJoinForm();
         $userJoinForm->name = "John";
 	    return $this->render('join', compact('userJoinForm'));
