@@ -36,4 +36,11 @@ class UserRecord extends ActiveRecord  // implements yii\web\IdentityInterface
      	  $this->passhash = $faker->password;
      	  $this->status =  $faker->randomDigit; // [0-9]
      }
+
+
+     public static function existsEmail ($email) // findUserByEmail
+     {
+         $count = self::find()->where(['email' => $email])->count();
+         return $count > 0;
+     }
 }
